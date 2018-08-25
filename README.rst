@@ -24,7 +24,7 @@ Functions:
 
 Create::
 
-    ansible-playbook tenant_yml.yml -e "public_ip_address=0.0.0.0" -e "localaction=create"
+    ansible-playbook tenant_yml.yml -e "localaction=create"
 
 Show::
 
