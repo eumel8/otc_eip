@@ -1,0 +1,4 @@
+---
+default:
+  eip_bandwidth_name: "ansible-eip02"
+  eip_bandwidth_size: "500"

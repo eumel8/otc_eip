@@ -1,5 +1,37 @@
 ---
 - hosts: localhost
-  remote_user: root
-  roles:
-    - otc_eip
+  gather_facts: no
+  vars_files:
+   - "vars/tenant.yml"
+
+  tasks:
+  - name: Import otc_auth for create EIP
+    import_role:
+      name: "otc_auth"
+
+  - name: SCENARIO 1 - create EIP
+    import_role:
+      name: "otc_eip"
+    vars:
+      eip_bandwidth_name: "{{ default.eip_bandwidth_name }}"
+      eip_bandwidth_size: "{{ default.eip_bandwidth_size }}"
+      localaction: "create"
+
+  - name: SCENARIO 2 - show EIP
+    import_role:
+      name: "otc_eip"
+    vars:
+      localaction: "show"
+
+  - name: SCENARIO 3 - delete EIP
+    import_role:
+      name: "otc_eip"
+    vars:
+      localaction: "delete"
+
+  - name: SCENARIO 4 - list EIP
+    import_role:
+      name: "otc_eip"
+    vars:
+      localaction: "list"
+
