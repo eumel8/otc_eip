@@ -14,7 +14,7 @@
   register: floatingipdetails
   retries: "{{ uri_retries }}"
   delay: "{{ uri_delay }}"
-  until: floatingupdetails.status == 200
+  until: floatingipdetails.status == 200
   changed_when: false
 
 - debug:
