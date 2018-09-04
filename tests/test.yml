@@ -15,6 +15,7 @@
     vars:
       eip_bandwidth_name: "{{ default.eip_bandwidth_name }}"
       eip_bandwidth_size: "{{ default.eip_bandwidth_size }}"
+      public_ip_address: "0.0.0.0"
       localaction: "create"
 
   - name: SCENARIO 2 - show EIP

@@ -19,6 +19,7 @@ env:
 branches:
   only:
     - master
+    - issue-1
 
 install:
   # Install Ansible.
