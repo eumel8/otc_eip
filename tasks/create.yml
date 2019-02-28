@@ -17,7 +17,8 @@
   changed_when: false
   when: public_ip_address == "0.0.0.0"
 
-- set_fact:
+- name: Set eip facts
+  set_fact:
     public_ip_address: "{{ (eip.content|from_json)|json_query('publicip.public_ip_address') }}"
     eip_id: "{{ (eip.content|from_json)|json_query('publicip.id') }}"
   when: public_ip_address == "0.0.0.0"
