@@ -17,5 +17,6 @@
   until: floatingipdetails.status == 200
   changed_when: false
 
-- debug:
+- name: floatingipdetails
+  debug:
     msg: "{{  floatingipdetails.json }}"

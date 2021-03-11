@@ -19,5 +19,6 @@
   until: eip.status == 200 or eip.status == 201 or eip.status == 202 or eip.status == 203 or eip.status == 204
   changed_when: false
 
-- debug:
+- name: eip
+  debug:
     msg: "{{ eip }}"
