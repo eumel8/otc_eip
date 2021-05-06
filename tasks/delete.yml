@@ -6,7 +6,7 @@
     url: "{{ AUTH_URL_VPC }}/v1/{{ PROJECT_ID }}/publicips/{{ eip_id }}"
     method: DELETE
     body_format: raw
-    return_content: yes
+    return_content: true
     status_code: 200,201,202,203,204
     follow_redirects: "{{ uri_follow_redirects }}"
     validate_certs: "{{ uri_validate_certs }}"
@@ -19,5 +19,6 @@
   until: eip.status == 200 or eip.status == 201 or eip.status == 202 or eip.status == 203 or eip.status == 204
   changed_when: false
 
-- debug:
+- name: eip
+  debug:
     msg: "{{ eip }}"
